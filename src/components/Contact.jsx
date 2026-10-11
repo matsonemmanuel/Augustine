@@ -79,7 +79,7 @@ export default function Contact() {
 
               <span>
                 <strong>Email</strong>
-                <small>john.doe@example.com</small>
+                <small>nchimiyea@gmail.com</small>
               </span>
             </a>
 
@@ -93,7 +93,7 @@ export default function Contact() {
 
               <span>
                 <strong>Phone</strong>
-                <small>+254 712 345 678</small>
+                <small>+256 779 730 339</small>
               </span>
             </a>
 
@@ -104,7 +104,7 @@ export default function Contact() {
 
               <span>
                 <strong>Location</strong>
-                <small>Nairobi, Kenya</small>
+                <small>Kikuube, Uganda</small>
               </span>
             </div>
 
