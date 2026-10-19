@@ -1,27 +1,22 @@
+
 import { motion } from 'framer-motion'
-import { ArrowUpRight, Mail } from 'lucide-react'
+import { ArrowUpRight, Mail, Phone } from 'lucide-react'
 import matLabsLogo from '../assets/images/mat2.png'
 
 const quickLinks = [
   { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
+  { label: 'About Me', href: '#about' },
   { label: 'Teaching', href: '#teaching' },
   { label: 'Leadership', href: '#leadership' },
-  { label: 'Community', href: '#community' },
+  { label: 'Community Impact', href: '#community' },
 ]
 
 const portfolioLinks = [
   { label: 'Football Journey', href: '#football' },
-  { label: 'Continuous Learning', href: '#learning' },
-  { label: 'Fellowships', href: '#fellowships' },
+  { label: 'Youth Mentorship', href: '#community' },
+  { label: 'Education & Teaching', href: '#teaching' },
+  { label: 'Training & Development', href: '#learning' },
   { label: 'Testimonials', href: '#testimonials' },
-  { label: 'Gallery', href: '#gallery' },
-]
-
-const socialLinks = [
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/', text: 'in' },
-  { label: 'Instagram', href: 'https://www.instagram.com/', text: 'ig' },
-  { label: 'Facebook', href: 'https://www.facebook.com/', text: 'f' },
 ]
 
 export default function Footer() {
@@ -40,15 +35,20 @@ export default function Footer() {
           >
             <a href="#home" className="footer-logo">
               <span className="footer-logo-mark">MAN</span>
+
               <span className="footer-logo-divider" />
+
               <span className="footer-logo-description">
-                Educator · Leader · Community Builder
+                Educator · Leader ·
+                <br />
+                Community Builder
               </span>
             </a>
 
             <p className="footer-brand-text">
-              Empowering people through education, purposeful leadership,
-              community service and continuous learning.
+              Empowering young people through education, mentorship,
+              community leadership and sport. Committed to creating
+              opportunities and building stronger communities.
             </p>
 
             <a href="#contact" className="footer-contact-link">
@@ -59,6 +59,7 @@ export default function Footer() {
 
           <div className="footer-column">
             <h3>Explore</h3>
+
             <ul>
               {quickLinks.map((link) => (
                 <li key={link.label}>
@@ -70,6 +71,7 @@ export default function Footer() {
 
           <div className="footer-column">
             <h3>My Journey</h3>
+
             <ul>
               {portfolioLinks.map((link) => (
                 <li key={link.label}>
@@ -83,33 +85,64 @@ export default function Footer() {
             <h3>Stay Connected</h3>
 
             <p>
-              Interested in collaboration, education, mentorship or
-              community development? Let&apos;s start a conversation.
+              Interested in education, youth empowerment, football,
+              partnerships or community development? Let&apos;s
+              connect and explore opportunities to make a difference.
             </p>
 
-            <a href="#contact" className="footer-email-link">
+            <a
+              href="mailto:nchimiyea@gmail.com"
+              className="footer-email-link"
+            >
               <Mail size={16} />
-              <span>Get in touch</span>
+              <span>Send me an email</span>
               <ArrowUpRight size={14} />
             </a>
 
+            <a
+              href="tel:+256779730339"
+              className="footer-contact-link"
+            >
+              <Phone size={15} />
+              <span>+256 779 730 339</span>
+            </a>
+
             <div className="footer-socials">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={social.label}
-                  title={social.label}
-                >
-                  <span
-                    className={`footer-social-text footer-social-${social.label.toLowerCase()}`}
-                  >
-                    {social.text}
-                  </span>
-                </a>
-              ))}
+              <a
+                href="https://www.linkedin.com/in/nchimiye-augustine-56b169327?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                title="LinkedIn"
+              >
+                <span className="footer-social-text footer-social-linkedin">
+                  in
+                </span>
+              </a>
+
+              <a
+                href="https://www.instagram.com/nchimiyeaugustine?psln=NXQ2b3MwYjVueWY3&utm_source=qr"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                title="Instagram"
+              >
+                <span className="footer-social-text footer-social-instagram">
+                  ig
+                </span>
+              </a>
+
+              <a
+                href="https://www.facebook.com/share/19dJ48DrBe/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                title="Facebook"
+              >
+                <span className="footer-social-text footer-social-facebook">
+                  f
+                </span>
+              </a>
             </div>
           </div>
         </div>
@@ -123,7 +156,8 @@ export default function Footer() {
 
       <div className="footer-bottom">
         <p className="footer-copyright">
-          &copy; {currentYear} John Doe. All rights reserved.
+          &copy; {currentYear} Muganza Augustine Nchimiye.
+          All rights reserved.
         </p>
 
         <div className="footer-powered-by">

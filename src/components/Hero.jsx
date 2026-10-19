@@ -17,9 +17,9 @@ import community from '../assets/images/community.jpg'
 const themes = [
   { label: 'Teaching', Icon: BookOpen },
   { label: 'Leadership', Icon: Users },
-  { label: 'Community', Icon: Heart },
+  { label: 'Mentorship', Icon: Heart },
   { label: 'Football', Icon: CircleDot },
-  { label: 'Learning', Icon: ChartNoAxesColumnIncreasing },
+  { label: 'Entrepreneurship', Icon: ChartNoAxesColumnIncreasing },
 ]
 
 export default function Hero() {
@@ -37,7 +37,7 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
         >
           <p className="hero-eyebrow">
-            EDUCATOR · LEADER · COMMUNITY BUILDER
+            EDUCATOR · COMMUNITY LEADER · YOUTH MENTOR
           </p>
 
           <h1 className="hero-title">
@@ -47,9 +47,12 @@ export default function Hero() {
           </h1>
 
           <p className="hero-description">
-            A passionate educator, a committed community leader, and
-            a team captain at Cosmos FC, dedicated to learning, service
-            and building a better tomorrow.
+            I am Muganza Augustine Nchimiye, an educator, community
+            leader and youth mentor serving young people through
+            education, entrepreneurship and community development.
+            As Director of Finance and Operations at CODA and captain
+            of Cosmos FC, I believe in building opportunities through
+            service, teamwork and leadership.
           </p>
 
           <div className="hero-actions">
@@ -64,7 +67,20 @@ export default function Hero() {
 
           <div className="hero-themes">
             {themes.map(({ label, Icon }) => (
-              <a href={`#${label.toLowerCase()}`} key={label}>
+              <a
+                href={
+                  label === 'Teaching'
+                    ? '#teaching'
+                    : label === 'Leadership'
+                      ? '#leadership'
+                      : label === 'Mentorship'
+                        ? '#community'
+                        : label === 'Football'
+                          ? '#football'
+                          : '#learning'
+                }
+                key={label}
+              >
                 <Icon size={20} strokeWidth={1.8} />
                 <span>{label}</span>
               </a>
@@ -80,7 +96,10 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15 }}
           >
-            <img src={teaching} alt="Teaching and classroom engagement" />
+            <img
+              src={teaching}
+              alt="Augustine supporting learners and classroom engagement"
+            />
           </motion.div>
 
           {/* Cosmos FC photograph, tilted like the reference */}
@@ -90,7 +109,10 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0, rotate: -5 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <img src={football} alt="Cosmos FC football leadership" />
+            <img
+              src={football}
+              alt="Football and team leadership at Cosmos FC"
+            />
           </motion.div>
 
           {/* Community image at the far right */}
@@ -100,7 +122,10 @@ export default function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <img src={community} alt="Community participation and service" />
+            <img
+              src={community}
+              alt="Community engagement and development activities"
+            />
           </motion.div>
 
           {/* Main portrait stays in the foreground */}
@@ -110,7 +135,10 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
           >
-            <img src={portrait} alt="Professional portrait" />
+            <img
+              src={portrait}
+              alt="Muganza Augustine Nchimiye"
+            />
           </motion.div>
 
           {/* Handwritten words positioned above the community imagery */}
@@ -118,6 +146,7 @@ export default function Hero() {
             <span>People</span>
             <span>Purpose</span>
             <span>Progress</span>
+
             <svg
               viewBox="0 0 120 30"
               aria-hidden="true"

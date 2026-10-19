@@ -9,28 +9,32 @@ import skillsImage from '../assets/images/engagement.jpg'
 
 const impactActivities = [
   {
-    title: 'Youth Education Program',
-    description: 'Empowering young minds through education.',
+    title: 'Education & Learning',
+    description:
+      'Supporting learning and encouraging young people to pursue their potential.',
     image: youthImage,
     category: 'Education',
   },
   {
-    title: 'Community Clean-up',
-    description: 'Creating a cleaner community for a healthier tomorrow.',
+    title: 'Community Engagement',
+    description:
+      'Working alongside others to encourage participation and community development.',
     image: cleanupImage,
     category: 'Community Service',
   },
   {
     title: 'Youth Mentorship',
-    description: 'Guiding the next generation.',
+    description:
+      'Encouraging young people through guidance, shared learning and positive example.',
     image: mentorshipImage,
     category: 'Mentorship',
   },
   {
-    title: 'Skills Development',
-    description: 'Creating opportunities through practical skills.',
+    title: 'Skills & Empowerment',
+    description:
+      'Promoting practical skills and opportunities that support personal growth.',
     image: skillsImage,
-    category: 'Skills',
+    category: 'Skills Development',
   },
 ]
 
@@ -50,10 +54,11 @@ export default function CommunityImpact() {
           <h2>Leadership Through Service</h2>
 
           <p>
-            I actively participate in community initiatives that promote
-            education, youth empowerment and social development. My work
-            is driven by a belief that strong communities create brighter
-            futures.
+            My commitment to community development is rooted in education,
+            youth engagement and service. Through collaboration, mentorship
+            and practical learning, I believe in helping people build
+            confidence, develop their abilities and contribute positively
+            to their communities.
           </p>
 
           <a href="#impact-stories" className="portfolio-gold-button">

@@ -15,9 +15,9 @@ const values = [
   { label: 'Integrity', Icon: ShieldCheck, color: 'green' },
   { label: 'Service', Icon: HandHeart, color: 'gold' },
   { label: 'Leadership', Icon: UserRound, color: 'green' },
-  { label: 'Learning', Icon: BookOpen, color: 'gold' },
-  { label: 'Teamwork', Icon: UsersRound, color: 'green' },
-  { label: 'Empowerment', Icon: Sprout, color: 'gold' },
+  { label: 'Teamwork', Icon: BookOpen, color: 'gold' },
+  { label: 'Discipline', Icon: UsersRound, color: 'green' },
+  { label: 'Community', Icon: Sprout, color: 'gold' },
 ]
 
 export default function About() {
@@ -33,14 +33,16 @@ export default function About() {
         >
           <img
             src={portrait}
-            alt="Educator and community leader"
+            alt="Muganza Augustine Nchimiye, educator and community leader"
             className="about-photo"
+            loading="lazy"
           />
 
           <div className="about-quote">
             <span className="quote-mark">“</span>
             <p>
-              Education is a powerful tool to transform lives and communities.
+              Leadership is about creating opportunities for others
+              to grow, participate, and realise their potential.
             </p>
           </div>
         </motion.div>
@@ -53,14 +55,20 @@ export default function About() {
           transition={{ duration: 0.65 }}
         >
           <p className="section-eyebrow">ABOUT ME</p>
+
           <h2>More Than a Profession</h2>
+
           <p className="about-description">
-            I am an educator, community leader and lifelong learner with a
-            passion for people and progress. My journey is shaped by a
-            commitment to education, leadership, community development and
-            teamwork. Whether in the classroom, on the football pitch, or
-            within the community, I believe in the power of people,
-            collaboration and continuous growth.
+            I am Muganza Augustine Nchimiye, an educator, community
+            leader, youth mentor, and football leader based in
+            Kyangwali, Uganda. As Director of Finance and Operations
+            at the Community Development Association (CODA), I
+            contribute to community development while supporting
+            young people through education, mentorship, financial
+            literacy, and entrepreneurship. From the classroom to
+            the football pitch, I believe in responsible leadership,
+            teamwork, and creating opportunities for people to
+            realise their potential.
           </p>
 
           <h3 className="values-heading">Core Values</h3>
@@ -73,11 +81,15 @@ export default function About() {
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.07, duration: 0.35 }}
+                transition={{
+                  delay: index * 0.07,
+                  duration: 0.35,
+                }}
               >
                 <div className={`value-icon value-icon-${color}`}>
                   <Icon size={19} strokeWidth={2.2} />
                 </div>
+
                 <span>{label}</span>
               </motion.div>
             ))}

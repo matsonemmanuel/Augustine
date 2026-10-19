@@ -12,34 +12,39 @@ import fellowshipImage from '../assets/images/leadership.jpg'
 const milestones = [
   {
     year: '2019',
-    title: 'Community Leadership',
+    title: 'Community Engagement',
     image: communityImage,
-    description: 'Participating in community initiatives and service.',
+    description:
+      'Contributing to community activities and building relationships through service.',
   },
   {
     year: '2021',
     title: 'Youth Development',
     image: youthImage,
-    description: 'Supporting young people through engagement and mentorship.',
+    description:
+      'Supporting young people through learning, participation and personal development.',
   },
   {
     year: '2023',
-    title: 'Team Captain',
+    title: 'Football Leadership',
     subtitle: 'Cosmos FC',
     image: footballImage,
-    description: 'Building teamwork, discipline and leadership through football.',
+    description:
+      'Promoting teamwork, discipline and shared responsibility through football.',
   },
   {
     year: '2024',
-    title: 'Community Initiative',
+    title: 'Community Initiatives',
     image: initiativeImage,
-    description: 'Contributing to activities that bring communities together.',
+    description:
+      'Taking part in initiatives that encourage collaboration and community development.',
   },
   {
     year: '2025',
-    title: 'Leadership Fellowship',
+    title: 'Leadership & Learning',
     image: fellowshipImage,
-    description: 'Developing leadership skills through continuous learning.',
+    description:
+      'Continuing to develop leadership skills through learning and community involvement.',
   },
 ]
 
@@ -70,12 +75,17 @@ export default function Leadership() {
         >
           <p className="portfolio-eyebrow">LEADERSHIP</p>
 
-          <h2>Leadership Beyond<br />the Classroom</h2>
+          <h2>
+            Leadership Beyond
+            <br />
+            the Classroom
+          </h2>
 
           <p>
-            Leadership is about people, purpose and a shared vision.
-            I have had the privilege of leading in different spaces—from
-            education and community initiatives to sports and youth development.
+            My leadership journey is shaped by community engagement,
+            youth development, education and teamwork. Through service,
+            football and continued learning, I seek to contribute to
+            initiatives that empower people and strengthen communities.
           </p>
 
           <a href="#community" className="portfolio-gold-button">
@@ -109,7 +119,9 @@ export default function Leadership() {
                 aria-pressed={activeIndex === index}
                 aria-label={`View ${item.title} from ${item.year}`}
               >
-                <span className="timeline-card-title">{item.title}</span>
+                <span className="timeline-card-title">
+                  {item.title}
+                </span>
 
                 {item.subtitle && (
                   <span className="timeline-card-subtitle">
@@ -136,7 +148,7 @@ export default function Leadership() {
             <ChevronLeft size={17} />
           </button>
 
-          <p>
+          <p aria-live="polite">
             <strong>{milestones[activeIndex].year}</strong>
             {' — '}
             {milestones[activeIndex].description}

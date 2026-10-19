@@ -6,24 +6,24 @@ import { ChevronLeft, ChevronRight, Quote } from 'lucide-react'
 const testimonials = [
   {
     quote:
-      'His dedication to teaching and community development is truly inspiring. He brings people together and creates opportunities for growth.',
-    name: 'Sarah Ahmed',
-    role: 'Colleague',
-    initials: 'SA',
+      'Augustine demonstrates a strong commitment to education and personal development. His dedication to helping young people learn and grow reflects the value he places on creating opportunities for others.',
+    name: 'Education Colleague',
+    role: 'Teaching & Education',
+    initials: 'EC',
   },
   {
     quote:
-      'An exceptional leader both in and out of the classroom. His commitment to youth empowerment is remarkable.',
-    name: 'James Okello',
-    role: 'Community Partner',
-    initials: 'JO',
+      'His involvement in community initiatives reflects a commitment to service, collaboration and youth empowerment. He values working with others to contribute to positive change.',
+    name: 'Community Collaborator',
+    role: 'Community Development',
+    initials: 'CC',
   },
   {
     quote:
-      'A great team captain who leads with humility, discipline and vision. He inspires those around him to become better.',
-    name: 'Daniel K.',
-    role: 'Teammate, Cosmos FC',
-    initials: 'DK',
+      'Through football, Augustine demonstrates the importance of teamwork, discipline and shared responsibility. These qualities contribute to his approach to leadership both on and off the pitch.',
+    name: 'Football Colleague',
+    role: 'Sports & Teamwork',
+    initials: 'FC',
   },
 ]
 
@@ -32,17 +32,21 @@ export default function Testimonials() {
 
   const visibleTestimonials = Array.from(
     { length: testimonials.length },
-    (_, index) => testimonials[(activeIndex + index) % testimonials.length]
+    (_, index) =>
+      testimonials[(activeIndex + index) % testimonials.length]
   )
 
   const previous = () => {
     setActiveIndex(
-      (current) => (current - 1 + testimonials.length) % testimonials.length
+      (current) =>
+        (current - 1 + testimonials.length) % testimonials.length
     )
   }
 
   const next = () => {
-    setActiveIndex((current) => (current + 1) % testimonials.length)
+    setActiveIndex(
+      (current) => (current + 1) % testimonials.length
+    )
   }
 
   return (
@@ -57,11 +61,13 @@ export default function Testimonials() {
         >
           <p className="portfolio-eyebrow">TESTIMONIALS</p>
 
-          <h2>What People Say</h2>
+          <h2>Words That Reflect the Journey</h2>
 
           <p>
-            I am grateful to work with amazing people—students, colleagues,
-            community members and teammates—who have been part of this journey.
+            Meaningful work is built through relationships, collaboration
+            and shared purpose. The perspectives of students, colleagues,
+            community members and teammates help tell the story of this
+            journey.
           </p>
         </motion.div>
 
@@ -84,10 +90,13 @@ export default function Testimonials() {
                   initial={{ opacity: 0, x: 12 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -12 }}
-                  transition={{ duration: 0.25, delay: index * 0.04 }}
+                  transition={{
+                    duration: 0.25,
+                    delay: index * 0.04,
+                  }}
                 >
                   <Quote
-                    size={15}
+                    size={18}
                     className="testimonial-quote-icon"
                     aria-hidden="true"
                   />
@@ -120,7 +129,10 @@ export default function Testimonials() {
             <ChevronRight size={17} />
           </button>
 
-          <div className="testimonial-dots" aria-label="Testimonial position">
+          <div
+            className="testimonial-dots"
+            aria-label="Testimonial position"
+          >
             {testimonials.map((testimonial, index) => (
               <button
                 key={testimonial.initials}
@@ -130,7 +142,9 @@ export default function Testimonials() {
                 }`}
                 onClick={() => setActiveIndex(index)}
                 aria-label={`Show testimonial ${index + 1}`}
-                aria-current={activeIndex === index ? 'true' : undefined}
+                aria-current={
+                  activeIndex === index ? 'true' : undefined
+                }
               />
             ))}
           </div>

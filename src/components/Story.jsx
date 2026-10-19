@@ -9,15 +9,55 @@ import {
 } from 'lucide-react'
 
 const statistics = [
-  { value: '8+', label: <>Years of Teaching<br />Experience</>, Icon: GraduationCap },
-  { value: '15+', label: <>Community<br />Initiatives</>, Icon: Users },
-  { value: '5', label: <>Leadership<br />Roles</>, Icon: Trophy },
-  { value: '10+', label: <>Trainings &<br />Fellowships</>, Icon: ChartNoAxesColumnIncreasing },
+  {
+    value: '4+',
+    label: (
+      <>
+        Years in Education
+        <br />
+        & Community Work
+      </>
+    ),
+    Icon: GraduationCap,
+  },
+  {
+    value: '400+',
+    label: (
+      <>
+        Young People
+        <br />
+        Mentored & Supported
+      </>
+    ),
+    Icon: Users,
+  },
+  {
+    value: '5',
+    label: (
+      <>
+        Community Projects
+        <br />
+        Initiated & Led
+      </>
+    ),
+    Icon: Trophy,
+  },
+  {
+    value: '75+',
+    label: (
+      <>
+        Orphans Supported
+        <br />
+        Through Education
+      </>
+    ),
+    Icon: ChartNoAxesColumnIncreasing,
+  },
 ]
 
 export default function Story() {
   return (
-    <section className="story-section">
+    <section className="story-section" id="story">
       <div className="story-inner">
         <motion.div
           className="story-copy"
@@ -27,14 +67,22 @@ export default function Story() {
           transition={{ duration: 0.6 }}
         >
           <p className="section-eyebrow">MY STORY</p>
-          <h2>A Journey Defined<br />by Purpose</h2>
+
+          <h2>
+            A Journey Defined
+            <br />
+            by Purpose
+          </h2>
+
           <p className="story-description">
-            Teaching has been more than a profession; it has been a pathway
-            to empower others, build confidence, and contribute to the growth
-            of the community. Through education, football leadership and
-            continuous learning, I strive to create opportunities and inspire
-            positive change.
+            My journey combines education, community leadership, and
+            youth mentorship. Through my work with CODA and community
+            initiatives in Kyangwali, I have supported young people
+            through learning, financial literacy, entrepreneurship,
+            and career development. I believe leadership means creating
+            opportunities for others to grow and build stronger communities.
           </p>
+
           <a href="#about" className="story-button">
             Read My Story <ArrowRight size={14} />
           </a>
@@ -48,10 +96,19 @@ export default function Story() {
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.45, delay: index * 0.1 }}
+              transition={{
+                duration: 0.45,
+                delay: index * 0.1,
+              }}
             >
-              <Icon className="stat-icon" size={23} strokeWidth={2.2} />
+              <Icon
+                className="stat-icon"
+                size={23}
+                strokeWidth={2.2}
+              />
+
               <strong>{value}</strong>
+
               <span>{label}</span>
             </motion.article>
           ))}

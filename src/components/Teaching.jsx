@@ -2,7 +2,6 @@
 import { motion } from 'framer-motion'
 import {
   ArrowRight,
-  GraduationCap,
   UsersRound,
   BookOpen,
   Target,
@@ -12,10 +11,10 @@ import {
 import classroomImage from '../assets/images/teaching.jpg'
 
 const teachingApproach = [
-  { title: 'Mentorship', Icon: UsersRound },
+  { title: 'Student Mentorship', Icon: UsersRound },
   { title: 'Practical Learning', Icon: BookOpen },
   { title: 'Confidence Building', Icon: Target },
-  { title: 'Student Growth', Icon: Sprout },
+  { title: 'Personal Development', Icon: Sprout },
 ]
 
 export default function Teaching() {
@@ -29,7 +28,9 @@ export default function Teaching() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p className="portfolio-eyebrow">TEACHING &amp; EDUCATION</p>
+          <p className="portfolio-eyebrow">
+            TEACHING &amp; EDUCATION
+          </p>
 
           <h2>Teaching With Purpose</h2>
 
@@ -42,12 +43,18 @@ export default function Teaching() {
           </div>
 
           <p className="teaching-description">
-            I am committed to creating engaging learning environments
-            that inspire students to discover their potential and become
-            active contributors to society.
+            Through my teaching experience at Maratatu Primary School
+            and my commitment to education, I aim to help learners
+            develop their knowledge, confidence and potential. I believe
+            that meaningful education goes beyond the classroom,
+            equipping young people with the skills and values they need
+            to contribute positively to their communities.
           </p>
 
-          <a href="#teaching-experience" className="portfolio-gold-button">
+          <a
+            href="#teaching-experience"
+            className="portfolio-gold-button"
+          >
             Explore My Teaching Experience
             <ArrowRight size={15} />
           </a>
@@ -62,7 +69,7 @@ export default function Teaching() {
         >
           <img
             src={classroomImage}
-            alt="Educator teaching students in a classroom"
+            alt="Teaching and engaging learners in a classroom"
             className="teaching-image"
           />
         </motion.div>
@@ -78,13 +85,23 @@ export default function Teaching() {
 
           <div className="teaching-approach-list">
             {teachingApproach.map(({ title, Icon }, index) => (
-              <div className="teaching-approach-item" key={title}>
+              <motion.div
+                className="teaching-approach-item"
+                key={title}
+                initial={{ opacity: 0, x: 8 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.35,
+                  delay: index * 0.08,
+                }}
+              >
                 <span className="approach-icon">
                   <Icon size={13} />
                 </span>
 
                 <span>{title}</span>
-              </div>
+              </motion.div>
             ))}
           </div>
         </motion.aside>

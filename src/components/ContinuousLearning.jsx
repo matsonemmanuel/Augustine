@@ -9,22 +9,25 @@ import {
 
 const learningAreas = [
   {
-    title: 'Professional Trainings',
-    description: 'Short courses, workshops and certifications.',
+    title: 'Professional Development',
+    description:
+      'Building practical knowledge and skills to strengthen my work in education and community development.',
     icon: BookOpenCheck,
-    details: 'Explore training experiences',
+    details: 'Explore professional development',
   },
   {
-    title: 'Fellowships',
-    description: 'Leadership and community development programmes.',
+    title: 'Leadership & Service',
+    description:
+      'Developing leadership capacity through community engagement, teamwork and service.',
     icon: UsersRound,
-    details: 'Explore fellowship experiences',
+    details: 'Explore leadership experiences',
   },
   {
-    title: 'Leadership Development',
-    description: 'Building skills for greater impact.',
+    title: 'Continuous Learning',
+    description:
+      'Applying lessons from learning experiences to improve my leadership and contribution to society.',
     icon: ChartNoAxesColumnIncreasing,
-    details: 'Explore leadership growth',
+    details: 'Explore my learning journey',
   },
 ]
 
@@ -40,18 +43,20 @@ export default function ContinuousLearning() {
           transition={{ duration: 0.5 }}
         >
           <p className="portfolio-eyebrow">
-            CONTINUOUS LEARNING & FELLOWSHIPS
+            CONTINUOUS LEARNING &amp; DEVELOPMENT
           </p>
 
           <h2>Always Learning. Always Growing.</h2>
 
           <p>
-            I am committed to continuous learning through trainings,
-            workshops and fellowships that strengthen my leadership,
-            teaching and community impact.
+            I believe continuous learning is essential to effective
+            leadership, meaningful community service and personal growth.
+            Through professional development, collaboration and practical
+            experience, I continue to strengthen my ability to educate,
+            lead and contribute to positive change.
           </p>
 
-          <a href="#testimonials" className="portfolio-gold-button">
+          <a href="#leadership" className="portfolio-gold-button">
             View My Learning Journey
             <ArrowRight size={13} />
           </a>
@@ -68,7 +73,10 @@ export default function ContinuousLearning() {
                 initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: index * 0.1 }}
+                transition={{
+                  duration: 0.45,
+                  delay: index * 0.1,
+                }}
               >
                 <span className="continuous-icon">
                   <Icon size={19} />
@@ -78,7 +86,7 @@ export default function ContinuousLearning() {
 
                 <p>{area.description}</p>
 
-                <a href="#testimonials">
+                <a href="#leadership">
                   View Details <ArrowRight size={11} />
                 </a>
               </motion.article>

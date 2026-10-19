@@ -16,7 +16,7 @@ const leadershipSkills = [
   { title: 'Discipline', Icon: ShieldCheck },
   { title: 'Vision', Icon: Eye },
   { title: 'Communication', Icon: MessageCircle },
-  { title: 'Results', Icon: Trophy },
+  { title: 'Achievement', Icon: Trophy },
 ]
 
 export default function FootballLeadership() {
@@ -32,7 +32,7 @@ export default function FootballLeadership() {
         >
           <img
             src={footballImage}
-            alt="Football captain representing Cosmos FC"
+            alt="Augustine participating in football with Cosmos FC"
             className="football-photo"
           />
 
@@ -56,10 +56,12 @@ export default function FootballLeadership() {
           <h2>Leadership On The Pitch</h2>
 
           <p>
-            As a team captain at Cosmos FC, I have developed valuable
-            leadership skills such as teamwork, discipline, communication,
-            decision-making and resilience—skills that translate into
-            real-world impact.
+            Football has provided an opportunity to practise leadership,
+            teamwork and discipline beyond the classroom. Through my
+            involvement with Cosmos FC as a team captain, I have developed
+            an appreciation for communication, collective responsibility
+            and working towards shared goals. These values also shape my
+            approach to community engagement and personal development.
           </p>
 
           <a href="#community" className="portfolio-gold-button">
@@ -74,7 +76,7 @@ export default function FootballLeadership() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          aria-label="Leadership skills developed through football"
+          aria-label="Leadership values developed through football"
         >
           <div className="pitch-outline">
             <div className="pitch-center-circle" />
@@ -93,6 +95,7 @@ export default function FootballLeadership() {
               <span className="pitch-skill-icon">
                 <Icon size={15} />
               </span>
+
               <span>{title}</span>
             </div>
           ))}
