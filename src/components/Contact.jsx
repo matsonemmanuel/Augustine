@@ -1,5 +1,7 @@
+
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import emailjs from '@emailjs/browser'
 import {
   Mail,
   Phone,
@@ -7,6 +9,10 @@ import {
   Send,
   CheckCircle2,
 } from 'lucide-react'
+
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -16,6 +22,8 @@ export default function Contact() {
     message: '',
   })
 
+  const [sending, setSending] = useState(false)
+  const [feedback, setFeedback] = useState('')
   const [submitted, setSubmitted] = useState(false)
 
   const handleChange = (event) => {
@@ -26,26 +34,61 @@ export default function Contact() {
       [name]: value,
     }))
 
-    if (submitted) {
-      setSubmitted(false)
-    }
+    setFeedback('')
+    setSubmitted(false)
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
 
-    const subject = encodeURIComponent(formData.subject)
+    if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+      setFeedback(
+        'Email service is not configured yet. Please try again later.'
+      )
+      setSubmitted(false)
+      return
+    }
 
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
-    )
+    setSending(true)
+    setFeedback('')
+    setSubmitted(false)
 
-    // Opens the visitor's default email application.
-    // Replace this address with the portfolio owner's real email.
-    window.location.href =
-      `mailto:john.doe@example.com?subject=${subject}&body=${body}`
+    try {
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          reply_to: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        {
+          publicKey: PUBLIC_KEY,
+        }
+      )
 
-    setSubmitted(true)
+      setSubmitted(true)
+      setFeedback(
+        'Thank you! Your message has been sent successfully.'
+      )
+
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+      })
+    } catch (error) {
+      console.error('EmailJS submission failed:', error)
+
+      setSubmitted(false)
+      setFeedback(
+        'Sorry, your message could not be sent. Please try again.'
+      )
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -70,7 +113,7 @@ export default function Contact() {
 
           <div className="contact-details">
             <a
-              href="mailto:john.doe@example.com"
+              href="mailto:nchimiyea@gmail.com"
               className="contact-detail"
             >
               <span className="contact-detail-icon">
@@ -84,7 +127,7 @@ export default function Contact() {
             </a>
 
             <a
-              href="tel:+254712345678"
+              href="tel:+256779730339"
               className="contact-detail"
             >
               <span className="contact-detail-icon">
@@ -178,15 +221,23 @@ export default function Contact() {
             required
           />
 
-          <button type="submit" className="contact-submit">
-            Send Message
+          <button
+            type="submit"
+            className="contact-submit"
+            disabled={sending}
+          >
+            {sending ? 'Sending...' : 'Send Message'}
             <Send size={13} />
           </button>
 
-          {submitted && (
-            <p className="contact-feedback" role="status">
-              <CheckCircle2 size={15} />
-              Your email application should open with your message.
+          {feedback && (
+            <p
+              className="contact-feedback"
+              role="status"
+              aria-live="polite"
+            >
+              {submitted && <CheckCircle2 size={15} />}
+              {feedback}
             </p>
           )}
         </motion.form>
