@@ -101,8 +101,8 @@ export default function Navbar() {
 
         {/* Desktop CV download */}
         <a
-          href="/resume.pdf"
-          download="Resume.pdf"
+          href="/Augustine-Nchimiye-CV.pdf"
+          download="Augustine-Nchimiye-CV.pdf"
           className="hidden shrink-0 items-center gap-2 rounded-full bg-[#D9AE43] px-4 py-2.5 text-xs font-semibold text-[#082337] transition-colors hover:bg-white xl:flex"
         >
           Download Resume
@@ -146,8 +146,8 @@ export default function Navbar() {
 
           {/* Mobile CV download */}
           <a
-            href="/resume.pdf"
-            download="Resume.pdf"
+            href="/Augustine-Nchimiye-CV.pdf"
+            download="Augustine-Nchimiye-CV.pdf"
             onClick={() => setMenuOpen(false)}
             className="mt-4 flex items-center justify-center gap-2 rounded-full bg-[#D9AE43] px-5 py-3 text-sm font-semibold text-[#082337] hover:bg-white"
           >
